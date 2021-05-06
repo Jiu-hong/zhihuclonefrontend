@@ -37,7 +37,7 @@ const Profile = () => {
       {person ? (
         <ProfileNav person={person} personid={personid} />
       ) : (
-        <div className="singlecell">Loading...</div>
+        <div className="cellframe singlecell">Loading...</div>
       )}
     </div>
   );
