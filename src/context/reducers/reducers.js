@@ -65,10 +65,7 @@ export const questionsReducer = (state, action) => {
   switch (action.type) {
     case "getallquestions":
       return action.payload;
-    case "getquestionsbycreator":
-      return action.payload;
-    case "getquestionsbyfollow":
-      return action.payload;
+
     case "getcentainquestion":
       return [action.payload];
     case "create":

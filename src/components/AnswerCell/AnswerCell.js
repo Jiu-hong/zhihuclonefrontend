@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { deleteAnswer, updateAnswer, likeAnswer } from "../../action/answer";
-import { followUser } from "../../action/user";
+import { followPerson } from "../../action/person";
 
 import { answerglobalContext } from "../../context/Provider/AnswerProvider";
 import { userglobalContext } from "../../context/Provider/UserProvider";
@@ -54,8 +54,8 @@ const AnswerCell = ({ answer }) => {
     await deleteAnswer(answer._id, answerdispatch, userdispatch);
   };
 
-  const followuser = async () => {
-    await followUser(
+  const followperson = async () => {
+    await followPerson(
       { followid: answer.creator._id },
       persondispatch,
       userdispatch
@@ -115,7 +115,7 @@ const AnswerCell = ({ answer }) => {
 
                   {userinfo && userinfo._id !== answer.creator._id && (
                     <button
-                      onClick={followuser}
+                      onClick={followperson}
                       disabled={!userinfo}
                       className={
                         person.followers?.find((a) => a._id === userinfo?._id)

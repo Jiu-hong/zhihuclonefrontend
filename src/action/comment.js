@@ -1,23 +1,11 @@
 import {
-  getcertaincomments,
   createcomment,
   likecomment,
   updatecomment,
   deletecomment,
-} from "../api";
+} from "../api/comment";
 
 import { logout } from "./user";
-
-export const getCertainComments = async (postid, commentdispatch) => {
-  try {
-    const { data } = await getcertaincomments(postid); //api
-
-    //dispatch
-    commentdispatch({ type: "getcertaincomments", payload: data });
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
-  }
-};
 
 const handleJwtexpire = (error, handler) => {
   if (error.response?.data?.error == "jwt expired") {

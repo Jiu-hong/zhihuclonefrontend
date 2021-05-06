@@ -26,12 +26,15 @@ const Answers = () => {
 
   return (
     <div>
-      {answerinfo.length > 0 &&
+      {answerinfo.length > 0 ? (
         answerinfo
           .sort((a, b) => new Date(b.update_date) - new Date(a.update_date))
           .map((answer) => {
             return <AnswerCellwithQuestion answer={answer} key={answer._id} />;
-          })}
+          })
+      ) : (
+        <div className="cellframe singlecell">There is no answers.</div>
+      )}
     </div>
   );
 };

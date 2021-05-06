@@ -12,7 +12,7 @@ const Signup = () => {
   const [userdata, setUserdata] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmpassword: "",
     firstname: "",
     lastname: "",
     description: "",
@@ -30,6 +30,8 @@ const Signup = () => {
       ...prevUserdata,
       [e.target.name]: e.target.value,
     }));
+
+    console.log("userdata:", userdata);
   };
 
   const handleSignup = async (e) => {

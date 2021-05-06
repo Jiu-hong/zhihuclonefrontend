@@ -79,6 +79,7 @@ const QuestionCell = ({ question }) => {
 
   const deletequestion = async () => {
     await deleteQuestion(question._id, questiondispatch, userdispatch);
+    history.push("/questions");
   };
 
   const readMoreTemplate = (content) => {

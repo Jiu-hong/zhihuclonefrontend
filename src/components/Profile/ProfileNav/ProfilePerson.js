@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { personglobalContext } from "../../../context/Provider/PersonProvider";
 import { userglobalContext } from "../../../context/Provider/UserProvider";
-import { followUser } from "../../../action/user";
+import { followPerson } from "../../../action/person";
 
 import "./Styles.css";
 
@@ -11,8 +11,8 @@ const ProfilePerson = ({ person }) => {
 
   const { userinfo, userdispatch } = useContext(userglobalContext);
 
-  const followuser = async () => {
-    await followUser({ followid: person._id }, persondispatch, userdispatch);
+  const followperson = async () => {
+    await followPerson({ followid: person._id }, persondispatch, userdispatch);
   };
 
   return (
@@ -29,7 +29,7 @@ const ProfilePerson = ({ person }) => {
             ? "followactive"
             : null
         }
-        onClick={followuser}
+        onClick={followperson}
       >
         <strong>
           {" "}

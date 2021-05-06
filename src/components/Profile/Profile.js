@@ -5,7 +5,7 @@ import { answerglobalContext } from "../../context/Provider/AnswerProvider";
 import { questionglobalContext } from "../../context/Provider/QuestionProvider";
 import { commentglobalContext } from "../../context/Provider/CommentProvider";
 
-import { getQAsbyPerson } from "../../action/qasbyperson";
+import { getAllforPerson } from "../../action/person";
 import ProfileNav from "./ProfileNav/ProfileNav";
 
 import "./Styles.css";
@@ -18,10 +18,12 @@ const Profile = () => {
   const { questiondispatch } = useContext(questionglobalContext);
   const { commentdispatch } = useContext(commentglobalContext);
 
-  const person = personinfo.find((p) => p._id === personid);
+  const person = personinfo.find((p) => p._id == personid);
+  console.log("personinfo:", personinfo);
+  console.log("personid:", personid);
 
   useEffect(() => {
-    getQAsbyPerson(
+    getAllforPerson(
       personid,
       answerdispatch,
       questiondispatch,

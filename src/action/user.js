@@ -1,13 +1,4 @@
-import {
-  signin,
-  signup,
-  forgot,
-  reset,
-  userinfo,
-  getusers,
-  followuser,
-  clearuser,
-} from "../api";
+import { signin, signup, forgot, reset } from "../api/user";
 
 export const signinUser = async (userdata, userdispatch, setError) => {
   //api getuser
@@ -90,63 +81,6 @@ export const resetPassword = async (userdata, userdispatch, setMessage) => {
       setMessage(error.response.data);
     }
 
-    return false;
-  }
-};
-
-export const getPersoninfo = async (postData, persondispatch) => {
-  //api
-  const { data } = await userinfo(postData);
-
-  //dispatch
-  persondispatch({
-    type: "getperson",
-    payload: data,
-  });
-};
-
-// export const getusers = () => API.get(host + "/user");
-export const getUsers = async (persondispatch) => {
-  //api
-  const { data } = await getusers();
-
-  //dispatch
-  persondispatch({
-    type: "getfollowers",
-    payload: data,
-  });
-};
-
-const handleJwtexpire = (error, handler) => {
-  if (error.response?.data?.error == "jwt expired") {
-    logout(handler);
-  }
-};
-
-export const followUser = async (postData, persondispatch, userdispatch) => {
-  try {
-    //api
-    const { data } = await followuser(postData);
-
-    //dispatch
-    persondispatch({ type: "updateperson", payload: data });
-
-    return true;
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
-
-    handleJwtexpire(error, userdispatch);
-
-    return false;
-  }
-};
-
-export const clearUser = async () => {
-  try {
-    await clearuser();
-    return true;
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
     return false;
   }
 };

@@ -1,9 +1,4 @@
-import {
-  getquestionsbytopic,
-  getanswersbytopic,
-  getusersbyids,
-  getcommentsbypostids,
-} from "../api";
+import { getqasbytopic } from "../api/answer";
 
 export const getQAsbyTopic = async (
   topicid,
@@ -14,26 +9,9 @@ export const getQAsbyTopic = async (
 ) => {
   try {
     //api
-    const questions = (await getquestionsbytopic(topicid)).data;
-    const answers = (await getanswersbytopic(topicid)).data;
+    const { data } = await getqasbytopic(topicid);
 
-    const personidsforanswers = answers.map((answer) => answer.creator._id);
-    const personidsforquestions = questions.map(
-      (question) => question.creator._id
-    );
-
-    const uniquepersonids = [
-      ...new Set([...personidsforanswers, ...personidsforquestions]),
-    ];
-
-    const persons = (await getusersbyids({ ids: uniquepersonids })).data;
-
-    const answerids = answers.map((answer) => answer._id);
-    const questionids = questions.map((question) => question._id);
-
-    const comments = (
-      await getcommentsbypostids({ postids: [...answerids, ...questionids] })
-    ).data;
+    const { answers, questions, persons, comments } = data;
 
     //dispatch
 
@@ -42,6 +20,7 @@ export const getQAsbyTopic = async (
     commentdispatch({ type: "getall", payload: comments });
 
     answerdispatch({ type: "getallanswers", payload: answers });
+
     questiondispatch({ type: "getallquestions", payload: questions });
   } catch (error) {
     if (error.response) console.log(error.response.data);

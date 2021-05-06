@@ -16,7 +16,7 @@ const Search = () => {
   const searchContent = query.get("search")?.toLowerCase();
 
   const getall = async () => {
-    await getAllforSearch(searchContent, searchdispatch);
+    await getAllforSearch({ searchcontent: searchContent }, searchdispatch);
   };
 
   useEffect(() => {

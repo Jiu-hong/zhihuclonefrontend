@@ -1,61 +1,17 @@
 import {
   getquestions,
-  getquestionsbycreator,
-  getquestionsbyfollow,
-  getquestionsbytopic,
   getcertainquestion,
   createquestion,
   updatequestion,
   followquestion,
   deletequestion,
-} from "../api";
+} from "../api/question";
 
 import { logout } from "./user";
 
 export const getQuestions = async (questiondispatch) => {
   try {
     const { data } = await getquestions(); //api
-
-    //dispatch
-    questiondispatch({ type: "getallquestions", payload: data });
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
-  }
-};
-
-// export const getquestionsbycreator = (creator) =>
-//API.get(host + `/question/creator/${creator}`);
-export const getQuestionsbyCreator = async (creator, questiondispatch) => {
-  try {
-    //api
-    const { data } = await getquestionsbycreator(creator);
-
-    //dispatch
-    questiondispatch({ type: "getquestionsbycreator", payload: data });
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
-  }
-};
-
-// export const getquestionsbyfollow = (followid) =>
-//   API.get(host + `/question/follow/${followid}`);
-export const getQuestionsbyFollow = async (followid, questiondispatch) => {
-  try {
-    //api
-    const { data } = await getquestionsbyfollow(followid); //api
-
-    //dispatch
-    questiondispatch({ type: "getquestionsbyfollow", payload: data });
-  } catch (error) {
-    if (error.response) console.log(error.response.data);
-  }
-};
-// export const getquestionsbytopic = (topicid) =>
-//   API.get(host + `/question/questionbytopic/${topicid}`);
-export const getQuestionsbyTopic = async (topicid, questiondispatch) => {
-  try {
-    //api
-    const { data } = await getquestionsbytopic(topicid); //api
 
     //dispatch
     questiondispatch({ type: "getallquestions", payload: data });
