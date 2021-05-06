@@ -85,6 +85,12 @@
   color: var(--text-gray);
 }
 
+.reset {
+  flex-direction: unset;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
 .inputbox input,
 .inputbox textarea {
   border: 0;

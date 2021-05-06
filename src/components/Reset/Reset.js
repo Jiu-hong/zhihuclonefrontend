@@ -80,7 +80,7 @@ const Reset = () => {
         <div className="signbtns">
           <button>submit</button>
         </div>
-        <div className="inputbox">
+        <div className="inputbox reset">
           <Link to="/signup" className="sqlink">
             <span className="switch">signup</span>
           </Link>
