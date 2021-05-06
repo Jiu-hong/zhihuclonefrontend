@@ -33,7 +33,7 @@ const Answers = () => {
             return <AnswerCellwithQuestion answer={answer} key={answer._id} />;
           })
       ) : (
-        <div className="cellframe singlecell">There is no answers.</div>
+        <div className="cellframe singlecell">Loading...</div>
       )}
     </div>
   );
