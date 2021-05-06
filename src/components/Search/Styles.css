@@ -1,0 +1,43 @@
+.schtopic {
+  margin-bottom: 0.3em;
+}
+
+.cellframe {
+  position: relative;
+  border-radius: 5px;
+  background-color: var(--bg-white--fade-90);
+  padding: 1em;
+  margin: 10px auto;
+
+  width: 60%;
+  min-width: 300px;
+  box-shadow: 0px 0px 1px lightgray;
+}
+
+@media screen and (max-width: 500px) {
+  .cellframe {
+    width: 80%;
+  }
+}
+
+.creator {
+  font-style: italic;
+}
+
+.creatordescription {
+  margin-bottom: 0.5em;
+}
+
+.acqquestion {
+  margin-bottom: 0.3em;
+}
+
+.sqlink {
+  text-decoration: none;
+  color: black;
+}
+
+.cellcontent {
+  margin: 0.3em 0;
+  overflow-wrap: break-word;
+}

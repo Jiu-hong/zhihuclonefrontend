@@ -1,0 +1,11 @@
+.singlecell {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 835px) {
+  .singlecell {
+    margin-top: 60px;
+  }
+}
+
+/* ok */

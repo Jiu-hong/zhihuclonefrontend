@@ -1,0 +1,68 @@
+.profile {
+  /*for ProfilePerson.js*/
+  text-align: center;
+  margin: 1em;
+}
+
+.profilebtng {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.profilebtn {
+  padding: 0.5em;
+  border-radius: 0;
+}
+
+.cellframe {
+  position: relative;
+  border-radius: 5px;
+  background-color: var(--bg-white--fade-90);
+  padding: 1em;
+  margin: 10px auto;
+
+  width: 60%;
+  min-width: 300px;
+  box-shadow: 0px 0px 1px lightgray;
+}
+
+.creator {
+  font-style: italic;
+}
+
+.cellframe:first-child {
+  margin-top: 50px;
+}
+
+.sqlink {
+  text-decoration: none;
+  color: black;
+}
+
+.followactive {
+  color: var(--text-gray);
+}
+
+.active {
+  background-color: var(--bg-blue);
+  color: white;
+}
+
+.singlecell {
+  margin-top: 50px;
+}
+@media screen and (min-width: 835px) {
+  .cellframe:first-child {
+    margin-top: 60px;
+  }
+
+  .singlecell {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cellframe {
+    width: 80%;
+  }
+}

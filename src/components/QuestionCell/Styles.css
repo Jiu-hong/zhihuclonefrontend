@@ -1,0 +1,88 @@
+.qctopic {
+  margin: 0.3em 0;
+}
+
+.creator {
+  font-style: italic;
+}
+
+.creatordescription {
+  margin-bottom: 0.5em;
+}
+
+.followactive {
+  color: var(--text-gray);
+}
+
+.active {
+  background-color: var(--bg-blue);
+  color: white;
+}
+
+.acqedit {
+  color: var(--text-gray);
+  font-size: small;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.acqeditg {
+  margin-bottom: 0.3em;
+}
+
+.navquestionbtng {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-bottom: 0.3em;
+}
+
+.cellcontent {
+  margin: 0.3em 0;
+  overflow-wrap: break-word;
+}
+
+.sqlink {
+  text-decoration: none;
+  color: black;
+}
+
+.readbtn {
+  text-decoration: underline;
+  font-style: italic;
+  color: var(--text-blue-dark);
+}
+
+.answerbutton {
+  margin-right: 1em;
+}
+
+.answerinquestion {
+  display: flex;
+  flex-direction: column;
+}
+
+.anonymousbtn {
+  align-self: flex-end;
+  border-radius: 0;
+}
+
+.cellframe {
+  position: relative;
+  border-radius: 5px;
+  background-color: var(--bg-white--fade-90);
+  padding: 1em;
+  margin: 10px auto;
+
+  width: 60%;
+  min-width: 300px;
+  box-shadow: 0px 0px 1px lightgray;
+}
+
+@media screen and (max-width: 500px) {
+  .cellframe {
+    width: 80%;
+  }
+}
+
+/* ok */

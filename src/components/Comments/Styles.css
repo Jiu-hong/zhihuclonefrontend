@@ -1,0 +1,12 @@
+.cmtinput {
+  margin-top: 0.5em;
+}
+
+.navquestionbtng {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-bottom: 0.3em;
+}
+
+/* ok */

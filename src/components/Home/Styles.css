@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+html,
+body {
+  width: 100vw;
+  background-color: var(--bg-gray--lighten-2);
+}
+
+html {
+  font-size: 16px;
+
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+div {
+  font-size: 1em;
+}
+.layer {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  color: var(--bg-blue);
+  border: none;
+  padding: 2px;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.active {
+  background-color: var(--bg-blue);
+  color: white;
+}

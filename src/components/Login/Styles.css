@@ -1,0 +1,110 @@
+.signtitle {
+  color: var(--text-gray);
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0.3em;
+  border-bottom: solid 2px var(--text-blue);
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cellframe {
+  position: relative;
+  border-radius: 5px;
+  background-color: var(--bg-white--fade-90);
+  padding: 1em;
+  margin: 10px auto;
+
+  width: 60%;
+  min-width: 300px;
+  box-shadow: 0px 0px 1px lightgray;
+}
+
+.singlecell {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 835px) {
+  .singlecell {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cellframe {
+    width: 80%;
+  }
+}
+
+.inputbox {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+  /* text-transform: capitalize; */
+  color: var(--text-gray);
+}
+
+.inputbox input,
+.inputbox textarea {
+  border: 0;
+  border-bottom: 1px solid var(--text-gray);
+  padding: 0.5em 1em;
+
+  outline: none;
+}
+
+.inputbox input:focus,
+.inputbox textarea:focus {
+  background-color: var(--bg-blue-light);
+  border: 0;
+}
+
+.inputbox button:active {
+  background-color: var(--bg-blue);
+  color: white;
+}
+
+.inputbox textarea {
+  background-color: unset;
+}
+
+.signbtns {
+  display: flex;
+  margin: 0.5em;
+  justify-content: space-between;
+}
+
+.signbtns button {
+  color: white;
+  background-color: var(--bg-blue);
+}
+
+.sqlink {
+  text-decoration: none;
+  color: black;
+}
+
+.switch {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--bg-blue);
+}
+
+.switch:hover {
+  background: lightgray;
+  text-decoration: none;
+}
+
+.switch:active {
+  color: var(--bg-blue--darken-4);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.error {
+  color: transparent;
+}
+
+.errorshow {
+  color: var(--text-red);
+}
