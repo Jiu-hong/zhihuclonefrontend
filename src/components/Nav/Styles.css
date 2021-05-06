@@ -206,6 +206,7 @@ li {
   left: 0;
   z-index: 1;
   word-break: break-all;
+  text-transform: unset;
 }
 
 .hide {
