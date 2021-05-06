@@ -27,7 +27,7 @@ const Questions = () => {
             <QuestionCell question={question} key={index} />
           ))
       ) : (
-        <div className="cellframe singlecell">There is no question.</div>
+        <div className="cellframe singlecell"> Loading...</div>
       )}
     </div>
   );
